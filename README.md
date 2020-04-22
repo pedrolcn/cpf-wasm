@@ -33,11 +33,11 @@ The libs we benchmarked against were:
 
 The results obtained show that `cpf-wasm` is at least 1.53 X faster than other libs performing the same task
 
-| lib          | time       | ratio    |
-|:_____________|:__________:|:________:|
-| **cpf-wasm** | **9.23s**  | **1.00** |
-| cpf          | 19.02s     | 2.06     |
-| @fnando/cpf  | 14.10s     | 1.53     |
+| lib          | time       | ratio    |  
+|:-------------|:----------:|:--------:|  
+| **cpf-wasm** | **9.23s**  | **1.00** |  
+| cpf          | 19.02s     | 2.06     |  
+| @fnando/cpf  | 14.10s     | 1.53     |  
 | cpf-check    | 20.33s     | 2.20     |
 
 benchmark code can be found at the `benchmark` folder
