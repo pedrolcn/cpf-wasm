@@ -1,6 +1,6 @@
 [package]
 name = "cpf-wasm"
-version = "0.1.1"
+version = "0.2.3"
 authors = ["Pedro Nascimento <pedrolcn@gmail.com>"]
 edition = "2018"
 
