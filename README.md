@@ -1,6 +1,7 @@
 # CPF-WASM
 
-A CPF validation lib using web-assembly
+Probably the fastest node cpf validation lib out there.  
+Written in rust, compiled to WASM
 
 ## Installation
 Install using the package manager of your choice, it already ships with typings

@@ -1,6 +1,7 @@
 mod utils;
 
 use wasm_bindgen::prelude::*;
+use js_sys::Error;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -49,6 +50,14 @@ impl CPF {
 
 #[wasm_bindgen]
 pub fn isValid(cpf: String) -> Result<bool, JsValue> {
+    if cpf.len() != 11 {
+        return Err(Error::new("cpf must contain exactly 11 characters").into());
+    }
+
+    if !cpf.chars().all(|ch| ch.is_numeric()) {
+        return Err(Error::new("cpf must contain only numeric characters").into());
+    }
+
     if CPF_BLACKLIST.iter().any(|bad_cpf| bad_cpf == &cpf.as_str()) {
         return Ok(false)
     }
@@ -82,6 +91,22 @@ mod test {
         assert_eq!(
             isValid("11111111111".to_owned()).unwrap(),
             false
+        )
+    }
+
+    #[test]
+    fn too_short() {
+        assert_eq!(
+            isValid("1234567890".to_owned()),
+            Err(Error::new("cpf must contain exactly 11 characters").into())
+        )
+    }
+
+    #[test]
+    fn invalid_input() {
+        assert_eq!(
+            isValid("1234567890a".to_owned()),
+            Err(Error::new("cpf must contain only numeric characters").into())
         )
     }
 }

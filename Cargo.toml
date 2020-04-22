@@ -1,6 +1,6 @@
 [package]
 name = "cpf-wasm"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Pedro Nascimento <pedrolcn@gmail.com>"]
 edition = "2018"
 
@@ -25,6 +25,9 @@ console_error_panic_hook = { version = "0.1.1", optional = true }
 #
 # Unfortunately, `wee_alloc` requires nightly Rust when targeting wasm for now.
 wee_alloc = { version = "0.4.2", optional = true }
+
+# JS object bindings
+js-sys = "0.3.37"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.2"
