@@ -1,0 +1,21 @@
+{
+  "name": "benchmark",
+  "version": "0.2.2",
+  "description": "cpf-wasm benchmars",
+  "main": "index.js",
+  "author": "Pedro Nascimento",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "benchmark:wasm": "time node wasm",
+    "benchmark:cpf": "time node cpf",
+    "benchmark:fnando-cpf": "time node fnando_cpf",
+    "benchmark:cpf-check": "time node cpf_check"
+  },
+  "dependencies": {
+    "@fnando/cpf": "^1.0.1",
+    "cpf": "^2.0.1",
+    "cpf-check": "^3.0.0",
+    "cpf-wasm": "^0.1.1"
+  }
+}
