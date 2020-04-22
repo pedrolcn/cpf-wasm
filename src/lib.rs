@@ -64,7 +64,7 @@ mod test {
     #[test]
     fn known_valid_cpf() {
         assert_eq!(
-            isValid("04324015120".to_owned()).unwrap(),
+            isValid("41154981452".to_owned()).unwrap(),
             true
         )
     }
@@ -72,7 +72,7 @@ mod test {
     #[test]
     fn off_by_one() {
         assert_eq!(
-            isValid("04324015121".to_owned()).unwrap(),
+            isValid("41154981453".to_owned()).unwrap(),
             false
         )
     }
